@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcion Basica 1</title>
+</head>
+<body>
+    <script>
+        //Pregunta 1
+        function a(){
+            return 35;
+        }
+        console.log(a())// imprime 35
+        function a(){//Pregunta 2
+            return 4;
+        }
+        console.log(a()+a());//imprime 16
+        function a(b){//Pregunta 3
+        return b;
+        }
+        console.log(a(2)+a(4));//imprime 6
+        
+        function a(b){//Pregunta 4
+        console.log(b);
+        return b*3;
+        }
+        console.log(a(3));//Imprime 3,9
+        function a(b){//Pregunta 5
+        return b*4;
+        console.log(b);
+        }
+        console.log(a(10));//Imprime 10,40
+        function a(b){//Pregunta 6
+        if(b<10) {
+            return 2;
+        }
+        else     {
+            return 4;
+        }
+        console.log(b);
+        }
+        console.log(a(15));//imprime 15,4
+        function a(b,c){//Pregunta 7
+            return b*c;
+        }
+        console.log(10,3);
+        console.log( a(3,10) );//imprime 10.3,30(el primer console.log no llama la funcion)
+        function a(b){//Pregunta 8
+            for(var i=0; i<10; i++){
+                console.log(i);
+            }
+            return i;
+        }
+        console.log(3);
+        console.log(4);//imprime 3,4 (no llama en ningun momento a la funcion)
+        function a(){//pregunta 9
+            for(var i=0; i<10; i++){
+                i = i +2;
+                console.log(i);
+            }
+        }
+        a();//imprime 2,3,4,5,6,7,8,9,10,11
+        function a(b,c){//pregunta 10
+            for(var i=b; i<c; i++) {
+            console.log(i);
+        }
+        return b*c;
+        }
+        a(0,10);
+        console.log(a(0,10));//imprime 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0
+        function a(){//pregunta 11
+            for(var i=0; i<10; i++){
+            for(var j=0; j<10; j++){
+                console.log(j);
+            }
+            console.log(i);
+            }
+        }//no imprime nada porque la funcion no es llamada
+        function a(){//pregunta 12
+            for(var i=0; i<10; i++){
+                for(var j=0; j<10; j++){
+                    console.log(i,j);
+                }
+                console.log(j,i);
+            }
+        }//no imprime nada porque la funcion no es llamada
+        var z = 10;//pregunta 13
+        function a(){
+            var z = 15;
+            console.log(z);
+        }
+        console.log(z);//imprime 10, la funcion no se ejecuta
+        var z = 10;//pregunta 14
+        function a(){
+            var z = 15;
+            console.log(z);
+        }
+        a();
+        console.log(z);// imprime 15,10
+        var z = 10;//pregunta 15
+        function a(){
+            var z = 15;
+            console.log(z);
+            return z;
+        }
+        z = a();
+        console.log(z);//imprime 15, 15
+
+    </script>
+</body>
+</html>

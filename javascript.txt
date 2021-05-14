@@ -1,0 +1,8 @@
+primera funcion
+imprime: 35
+segunda funcion
+imprime: 8
+tercera funcion
+imprime: 6
+cuarta funcion
+imprime: 3,9
