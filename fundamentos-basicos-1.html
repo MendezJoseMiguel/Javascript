@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Basicos 1</title>
+</head>
+<body>
+    <script>
+        function sum255(num){//Ejercico 1
+        for (i=1 ; i<= num ; i++){ 
+            console.log(i);
+        }
+        }
+        sum255(255);//imprime del 1 al 255
+        var suma = 0;
+        console.log(1);
+        for (i = 1; i <= 1000; i++ ){//suma de todos los números pares del 1 al 1000
+            if( i % 2 == 0){
+                suma= suma + 2;
+                console.log(suma);
+            }
+        }
+        var suma = 1;
+        console.log(1);
+        for (i = 1; i <= 4998; i+=2 ){//suma de todos los números inpares del 1 al 5000
+                suma= suma + 2;
+                console.log(suma);
+        }
+        function sumarray(arr){//función que devuelva la suma de todos los valores dentro de un array
+            let sumarr = 0;
+            for(i = 0; i < arr.length; i++){
+
+                sumarr += arr[i];
+            }
+            return sumarr;
+        }
+        var sumaimp = sumarray([4,-2,10,5,8])
+        console.log(sumaimp);
+        function mayorElemarray(array) {//función que devuelva el número mayor
+            var mayorHastaAhora = array[0];
+            for (i = 0; i <= array.length-1;i++){//ahora compara el mayor con cada elemento del array
+            if (mayorHastaAhora < array[i]){
+                mayorHastaAhora = array[i];
+            }
+        }
+        return mayorHastaAhora;
+    }
+    var mayorarray = mayorElemarray([29,30,31,32,38]);
+    console.log("El mayor elemento del array es "+ mayorarray); // debe imprimir 38
+    function promarray(arr){//función que devuelva el promedio de los valores
+            let sumarr = 0;
+            for(i = 0; i < arr.length; i++){
+
+                sumarr += arr[i];
+            }
+            let prmdarray = sumarr / arr.length ;
+            return prmdarray;
+        }
+        var promdimp = promarray([4,-2,10,5,8])
+        console.log(promdimp);//devuelve 5
+        function arrayimpar(num){
+            var suma = 1;
+            var arrayi =[1];
+            for (i = 1; i <= num-2; i+=2 ){//función que devuelva un array de todos los números impares entre 1 y 50
+                    suma= suma + 2;
+                arrayi.push (suma);    
+            }
+            console.log(arrayi);
+            return arrayi;
+        }
+        var tarrayimp = arrayimpar(50)
+        console.log(tarrayimp);
+        var y = 15;
+        function mayoresElemtarray(array) {//función que toma un array y devuelve los valores mayores que Y
+            var mayor = y;
+            var elemtmayores = [];
+            for (i = 0; i <= array.length-1;i++){//
+            if (mayor < array[i]){
+                elemtmayores.push(array[i]);
+            }
+        }
+        return elemtmayores;
+    }
+    var mayoresarray = mayoresElemtarray([9,23,31,2,18]);
+    console.log("Los Elementos Mayores del array son "+ mayoresarray);
+    function elementoscuadrados(array) {//función que reemplace cada valor por el cuadrado del mismo valor
+            var elemtcuadrados = [];
+            for (i = 0; i <= array.length-1;i++){//
+                var arrcuadrado = Math.pow(array[i],2)
+                elemtcuadrados.push(arrcuadrado);
+                console.log(elemtcuadrados)
+            }
+            return elemtcuadrados;
+        }
+    var arrayalcuadrado = elementoscuadrados([9,3,5,2,8]);
+    console.log("Los Elementos Mayores del array son "+ arrayalcuadrado);
+    function elementosnegativos(array) {// función que reemplace cualquier número negativo dentro del array por 0
+            var elemtnega = [];
+            for (i = 0; i <= array.length-1;i++){//
+                if (array[i]<0){
+                    elemtnega.push(0);
+                } else{
+                    elemtnega.push(array[i]);
+                }
+            }
+            return elemtnega;
+        }
+    var arraysinnegat = elementosnegativos([9,-3,5,-2,8]);
+    console.log("Los Elementos del array sin negativos son "+ arraysinnegat);
+    function mayormenorypromedio(array) {//
+            var mayorarray = array[0];
+            var menorarray = array[0];
+            var promdarray = 0;
+            var arrayfinal = [];
+            for (i = 0; i < array.length;i++){//función que devuelva un nuevo array que solo contenga el valor mayor (max), menor (min) y promedio (avg) del array original 
+            if (mayorarray < array[i]){
+                mayorarray = array[i];
+            }
+            if (menorarray > array[i]){
+                menorarray = array[i]
+            }
+        }
+        var sumarr = 0;
+            for(i = 0; i < array.length; i++){
+
+                sumarr += array[i];
+            }
+            var promdarray = sumarr / array.length ;
+            arrayfinal.push(mayorarray,menorarray,promdarray)
+        return arrayfinal;
+    }
+    var arraynuevo = mayormenorypromedio([-9,30,10,]);
+    console.log("Elnuevo array es "+ arraynuevo);
+    function intercambiavalores(array){//función que intercambie el primer y el último valor de cualquier array
+        var primero = array[0];
+        var ultimo = array[array.length-1];
+        var nuevoarray = [];
+
+        for (i=0;i< array.length; i++){
+            nuevoarray.push(array[i]);
+        }
+        console.log(nuevoarray);
+        nuevoarray[0] = ultimo;
+        nuevoarray[nuevoarray.length-1] = primero;
+        return nuevoarray;
+    }
+    var imparray = intercambiavalores([5,14,-3,7]);
+    console.log("El Nuevo Array es "+imparray);
+    function cambionegativosstring(array) {//función que tome un array de números y reemplace cualquier valor negativo por el string ‘Dojo’
+            var arraystring = array;
+            for (i = 0; i <= array.length-1;i++){//
+                if(array[i]<0){
+                    arraystring[i] = "Dojo"
+                }
+            }
+            return arraystring;
+        }
+    var arraydojo = cambionegativosstring([-9,3,-5,2,-8]);
+    console.log("Los Array con Strings es "+ arraydojo);
+    </script>
+</body>
+</html>
