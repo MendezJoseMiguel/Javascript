@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Basicos II</title>
+</head>
+<body>
+    <script>
+        function cambiopositivosstring(array) {//función que cambie todos los números positivos en él, por el string “big”
+            var arraystring = array;
+            for (i = 0; i < array.length ;i++){//
+                if(array[i]>0){
+                    arraystring[i] = "Big"
+                }
+            }
+            return arraystring;
+        }
+    var arraybig = cambiopositivosstring([-9,3,-5,2,-8]);
+    console.log("Los Array con Strings es "+ arraybig);
+    function mayorymenor(array) {//función debería imprimir (print) el menor valor del array, y devolver (return) el mayor. 
+            var mayorarray = array[0];
+            var menorarray = array[0];
+            for (i = 0; i < array.length;i++){ 
+            if (mayorarray < array[i]){
+                mayorarray = array[i];
+            }
+            if (menorarray > array[i]){
+                menorarray = array[i]
+            }
+        }
+        console.log("El menor valor del Array es "+menorarray);
+        
+        return mayorarray;
+    }
+    var arraynuevo = mayorymenor([-9,30,10,]);
+    console.log("El mayor numero del array es "+ arraynuevo);
+
+    function penultimoyprimerneg(array){//función debería imprimir (print) el penúltimo valor y devolver (return) el primer valor impar.
+        var primerneg = [];
+        var penultimo = array[array.length-2];
+
+        for (i=0;i< array.length; i++){
+            if (array[i]<0){
+                primerneg.push(array[i]);
+            }
+        }
+        console.log("El Penultimo numero Array es "+penultimo);
+        return primerneg;
+    }
+    var imparray = penultimoyprimerneg([5,-14,-3,7,8]);
+    console.log(" El primer negativo "+ imparray[0]);
+    function valoresduplicados(array) {//función que devuelva un nuevo array donde cada valor se duplique.
+            var elemtcuadrados = [];
+            for (i = 0; i <= array.length-1;i++){//
+                var arrcuadrado = Math.pow(array[i],2)
+                elemtcuadrados.push(arrcuadrado);
+            }
+            return elemtcuadrados;
+        }
+    var arrayalcuadrado = valoresduplicados([9,3,5,2,8]);
+    console.log("Los Elementos Duplicados del array son "+ arrayalcuadrado);
+
+    function contarpositivos(array){// función para reemplazar el último valor con el número de valores positivos encontrados en el array.
+        var positivosarr = [];
+        var arraymod = array;
+        for (i=0;i< array.length; i++){
+            if (array[i]>0){
+                positivosarr.push(array[i]);
+            }
+        }
+        arraymod[arraymod.length-1] = positivosarr.length
+        return arraymod;
+    }
+    var imparray = contarpositivos([5,-14,-3,7,8]);
+    console.log(" El Array modificado es "+ imparray);
+
+    function pareseimpares(array){//función que acepte un array. Cada vez que ese array tenga 3 valores impares seguidos, imprime (print) “¡Qué imparcial!”, y cada vez que tenga 3 pares seguidos, imprime (print) “¡Es para bien!”.
+        
+        for (i=0; i < array.length;i++){
+            if(array[i]%2 == 0 && array[i+1]%2 == 0 && array[i+2]%2 == 0){
+                console.log("Es para bien");
+            }
+            if(array[i]%2 !== 0 && array[i+1]%2 !== 0 && array[i+2]%2 !== 0){
+                console.log("Que imparcial");
+            }
+        }
+    }
+    pareseimpares([5,9,11,14,2,8]);
+
+    function incrementalossegundos(arr){//Dado un array de números arr, agrega 1 a cualquier otro elemento, específicamente a aquellos cuyo índice es impar (arr[1], arr[3], arr[5], etc). Luego, console.log cada valor del array y devuelve arr. 
+        
+        for (i=0; i < arr.length;i++){
+
+            if(i % 2 !== 0){
+                arr[i]= arr[i] + 1; 
+            }
+            console.log(arr[i]);
+        }
+        return arr;
+    }
+    let arraydev = incrementalossegundos([5,13,11,14,2,8]);
+    console.log("El Array con incremeto de segundos es "+arraydev);
+
+    function longitudesprevias(arr){//Dado un array que contiene strings, reemplaza cada string con un número de acuerdo cantidad de letras (longitud) del string anterior. Por ejemplo, longitudesPrevias([“programar”,“dojo”, “genial”]) debería devolver [“programar”,9, 4]. 
+        
+        for (i = arr.length - 1; i > 0;i--){
+
+            arr[i] = arr[i-1].length;
+
+        }
+        return arr;
+    }
+    let arraylongitud = longitudesprevias(['Programar','Javascript','Python']);
+    console.log("El Array de longitudes previas es "+arraylongitud);
+
+    function agregasiete(arr){//Devuelve un nuevo array con todos los valores del original, pero sumando 7 a cada uno. No alteres el array original. Por ejemplo, agregaSiete([1,2,3) debería devolver [8,9,10] en un nuevo array. 
+        let nuevoarr = [];
+        for (let i=0; i < arr.length;i++){
+
+            nuevoarr.push(arr[i]+7);
+        }
+        return nuevoarr;
+    }
+    let arraysiete = agregasiete([1,2,3,4]);
+    console.log("El Array sumando 7 es "+arraysiete);
+    
+    function arrayinverso(array){//función que invierte sus valores en el lugar
+        let temp;
+        for (let i=0;i< array.length/2; i++){
+                temp = array[i];
+                array[i] = array[array.length-1-i];
+                array[array.length-1-i] = temp;
+        }
+
+        return array;
+    }
+    var imparrayinv = arrayinverso([5,14,-3,7]);
+    console.log("El Nuevo Array inverso es "+imparrayinv);
+    
+    </script>
+</body>
+</html>
